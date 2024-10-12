@@ -79,11 +79,11 @@ public class Zestaw1 {
     }
 
     public static void zad9 () {
-        System.out.println("Grzesiek nie wiedział dlaczego królik jest tak drapieżnym skurczybykiem mimo, że jego aparycja na to nie wskazuje");
+        System.out.printf("Grzesiek nie wiedział dlaczego %s jest tak drapieżnym %s mimo, że jego %s na to nie wskazuje\n", "królik", "skurczybykiem", "aparycja");
     }
 
     public static void zad10 () {
-        System.out.println("Chłopki to najlepsza książka napisana przez Joannę Kuciel-Frydryszak");
+        System.out.printf("%s to najlepsza książka napisana przez %s \n", "Chłopki", "Joannę Kuciel-Frydryszak");
     }
 
     public static void zad11 () {
