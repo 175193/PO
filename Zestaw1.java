@@ -19,22 +19,22 @@ public class Zestaw1 {
         zad13();
     }
 
-    public static void zad1 () {
+    public static void zad1() {
         System.out.println("Szymon Suduł");
     }
 
-    public static void zad2 () {
+    public static void zad2() {
         System.out.println("Szymon Suduł".length());
     }
 
-    public static void zad3 () {
+    public static void zad3() {
         String str1 = "Ala ";
         String str2 = "ma ";
         String str3 = "kota";
         System.out.println(str1 + str2 + str3);
     }
 
-    public static void zad4 () {
+    public static void zad4() {
         System.out.println("                        *");
         System.out.println("                        * *");
         System.out.println("                        * * *");
@@ -44,28 +44,39 @@ public class Zestaw1 {
         System.out.println("                        * * *");
         System.out.println("                        * *");
         System.out.println("                        *");
+
+        System.out.println("      *");
+        System.out.println("     * *");
+        System.out.println("   * * * *");
+        System.out.println("  * * * * * ");
+        System.out.println("* * * * * * *");
+        System.out.println("  * * * * * ");
+        System.out.println("   * * * *");
+        System.out.println("    * * * ");
+        System.out.println("     * *");
+        System.out.println("      *");
     }
 
-    public static void zad5 () {
+    public static void zad5() {
         String str = "Ala ma kota";
         String newStr = str.replace('a', 'e');
         System.out.println(newStr);
     }
 
-    public static void zad6 () {
+    public static void zad6() {
         String str = "Ala ma kota";
         System.out.println(str.toUpperCase());
         System.out.println(str.toLowerCase());
     }
 
-    public static void zad7 () {
+    public static void zad7() {
         char[] arr = {'A', '!', '@', '>', '~', '\n', '\b'};
         for (char c : arr) {
-            System.out.println(c + ": " + (int)c);
+            System.out.println(c + ": " + (int) c);
         }
     }
 
-    public static void zad8 () {
+    public static void zad8() {
         int mmin = 'a';
         int mmax = 'z';
         int dmin = 'A';
@@ -78,15 +89,15 @@ public class Zestaw1 {
 
     }
 
-    public static void zad9 () {
+    public static void zad9() {
         System.out.printf("Grzesiek nie wiedział dlaczego %s jest tak drapieżnym %s mimo, że jego %s na to nie wskazuje\n", "królik", "skurczybykiem", "aparycja");
     }
 
-    public static void zad10 () {
+    public static void zad10() {
         System.out.printf("%s to najlepsza książka napisana przez %s \n", "Chłopki", "Joannę Kuciel-Frydryszak");
     }
 
-    public static void zad11 () {
+    public static void zad11() {
         String word = "wodrze";
 
         for (int i = 0; i < 5; i++) {
@@ -96,7 +107,7 @@ public class Zestaw1 {
     }
 
     // https://www.w3schools.com/java/java_date.asp
-    public static void zad12 () {
+    public static void zad12() {
         LocalDate date = LocalDate.now();
         LocalTime time = LocalTime.now();
         DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
@@ -104,11 +115,11 @@ public class Zestaw1 {
         System.out.println("Dziś jest " + date.format(dateFormatter) + " godzina " + time.format(timeFormatter));
     }
 
-    public static void zad13 () {
+    public static void zad13() {
         int[] arr = {54, 103, 241, 67, 9999, "Szymon Suduł".length(), 175193};
 
         for (int i : arr) {
-            System.out.println(i + ": " + (char)i);
+            System.out.println(i + ": " + (char) i);
 
         }
     }
