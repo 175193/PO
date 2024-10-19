@@ -2,16 +2,17 @@ import java.util.Scanner;
 
 public class Zestaw3 {
     public static void main(String[] args) {
-        trojkiPitagorejskie(10);
-        funKwaRozwiazania(50);
-        funKwaDelta(10);
-        liczbyPierwsze(10);
-        liczbyPodzielne(2, 5);
-        piramida(5, 1);
-        piramida(6, 2);
-        dwumianNewtona(3, 8);
-        trojkatPaskala(9);
-        czyPalindrom(1221);
+//        trojkiPitagorejskie(10);
+//        funKwaRozwiazania(50);
+//        funKwaDelta(10);
+//        liczbyPierwsze(100);
+//        liczbyPodzielne(2, 5);
+//        piramida(5, 1);
+//        piramida(6, 2);
+//        dwumianNewtona(3, 8);
+//        trojkatPaskala(9);
+//        czyPalindrom(1221);
+        podzbiory(new int[]{1, 2, 3, 4});
     }
 
     public static void trojkiPitagorejskie(int n) {
@@ -56,7 +57,7 @@ public class Zestaw3 {
 
     public static void liczbyPierwsze(int n) {
         for (int i = 1; i <= n; i++) {
-            if (czyPierwsza(n)) {
+            if (czyPierwsza(i)) {
                 System.out.print(n + ", ");
             }
         }
@@ -211,7 +212,7 @@ public class Zestaw3 {
 
     // zad 17
     public static boolean czyPierwsza(int n) {
-        if (n <= 1) {
+        if (n < 2) {
             return false;
         }
         for (int i = 2; i <= Math.sqrt(n); i++) {
@@ -242,7 +243,10 @@ public class Zestaw3 {
         return res;
     }
 
-    public static void podzbiory(int[] n) {
-
+    public static void podzbiory(int[] arr) {
+//        [1, 2, 3] => [1] [1 2] [1 3] [2] [2 1] [2 3] [3]
+        for (int i = 0; i < arr.length; i++) {
+            System.out.printf("[%d],", arr[i]);
+        }
     }
 }
