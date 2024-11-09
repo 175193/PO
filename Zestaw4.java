@@ -1,15 +1,17 @@
-import java.util.Arrays;
 import java.util.Random;
 
 public class Zestaw4 {
     public static void main(String[] args) {
         int[] arr = generujTablice(10, -20, 30);
-        System.out.println(Arrays.toString(arr));
+//        System.out.println(Arrays.toString(arr));
 
-        najdluzszyCiagDodatnich(arr);
-        System.out.println();
-        najdluzszyCiagUjemnych(arr);
+        int[][] nested = {{1, 2, 3}, {4, 5, 6}};
+        wypiszTablice(nested, 3, 4);
 
+//        najdluzszyCiagDodatnich(arr);
+//        System.out.println();
+//        najdluzszyCiagUjemnych(arr);
+//
         ileDodatnich(arr);
         ileUjemnych(arr);
         ileParzystych(arr);
@@ -50,12 +52,20 @@ public class Zestaw4 {
     }
 
     public static void wypiszTablice(int[][] arr, int n, int m) {
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = 0; j < m - 1; j++) {
-                System.out.print(arr[j]);
+        System.out.print("[\n");
+        for (int i = 0; i < n; i++) {
+            System.out.print("\t[");
+            for (int j = 0; j < m; j++) {
+                try {
+                    System.out.print(arr[i][j] + ", ");
+                } catch (IndexOutOfBoundsException e) {
+                    System.out.print(", ");
+                }
             }
+            System.out.print("]");
+            System.out.println();
         }
-
+        System.out.print("]");
     }
 
     public static int ileNieparzystych(int[] arr) {
@@ -246,8 +256,7 @@ public class Zestaw4 {
                 currLen++;
                 if (currLen == 1)
                     currIdx = i;
-            }
-            else {
+            } else {
                 if (currLen > maxLen) {
                     maxLen = currLen;
                     maxIdx = currIdx;
@@ -278,8 +287,7 @@ public class Zestaw4 {
                 currLen++;
                 if (currLen == 1)
                     currIdx = i;
-            }
-            else {
+            } else {
                 if (currLen > maxLen) {
                     maxLen = currLen;
                     maxIdx = currIdx;
@@ -331,10 +339,10 @@ public class Zestaw4 {
         double step = (maxWartosc - minWartosc) / (n - 1.0);
         System.out.println(step);
 
-       for (int i = 0; i < n; i++) {
-           res[i] = (minWartosc + i * step);
-       }
+        for (int i = 0; i < n; i++) {
+            res[i] = (minWartosc + i * step);
+        }
 
-       return res;
+        return res;
     }
 }
