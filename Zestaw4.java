@@ -4,7 +4,11 @@ import java.util.Random;
 public class Zestaw4 {
     public static void main(String[] args) {
         int[] arr = generujTablice(10, -20, 30);
-//        System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(arr));
+
+        najdluzszyCiagDodatnich(arr);
+        System.out.println();
+        najdluzszyCiagUjemnych(arr);
 
         ileDodatnich(arr);
         ileUjemnych(arr);
@@ -29,8 +33,8 @@ public class Zestaw4 {
 //        System.out.println(Arrays.toString(odwrocTablice(arr)));
 //        System.out.println(Arrays.toString(odwrocTablice(arr, 3, 6)));
 
-        double[] arr2 = generujTablice2(7, 5, 20);
-        System.out.println(Arrays.toString(arr2));
+//        double[] arr2 = generujTablice2(7, 5, 20);
+//        System.out.println(Arrays.toString(arr2));
     }
 
     public static int[] generujTablice(int n, int minWartosc, int maxWartosc) {
@@ -234,26 +238,69 @@ public class Zestaw4 {
         return res;
     }
 
-//    public static void najdluzszyCiagDodatnich(int[] arr) {
-//        int idx = 0;
-//        int count = 0;
-//        int temp = 0;
-//        for (int i = 0; i < arr.length; i++) {
-//            if (arr[i] > 0) {
-//                count++;
-//                temp++;
-//            } else {
-//                if (temp > count) {
-//                    count = temp;
-//                    idx = i;
-//                }
-//            }
-//        }
-//
-//        for (int i = 0; i < count; i++) {
-//            System.out.print(arr[idx + i] + ", ");
-//        }
-//    }
+    public static void najdluzszyCiagDodatnich(int[] arr) {
+        int maxIdx = 0, maxLen = 0, currLen = 0, currIdx = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > 0) {
+                currLen++;
+                if (currLen == 1)
+                    currIdx = i;
+            }
+            else {
+                if (currLen > maxLen) {
+                    maxLen = currLen;
+                    maxIdx = currIdx;
+                }
+                currLen = 0;
+            }
+        }
+
+        if (currLen > maxLen) {
+            maxLen = currLen;
+            maxIdx = currIdx;
+        }
+
+        if (maxLen > 0) {
+            int i = maxIdx;
+            while (i < maxIdx + maxLen) {
+                System.out.print(arr[i] + ", ");
+                i++;
+            }
+        }
+    }
+
+    public static void najdluzszyCiagUjemnych(int[] arr) {
+        int maxIdx = 0, maxLen = 0, currLen = 0, currIdx = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < 0) {
+                currLen++;
+                if (currLen == 1)
+                    currIdx = i;
+            }
+            else {
+                if (currLen > maxLen) {
+                    maxLen = currLen;
+                    maxIdx = currIdx;
+                }
+                currLen = 0;
+            }
+        }
+
+        if (currLen > maxLen) {
+            maxLen = currLen;
+            maxIdx = currIdx;
+        }
+
+        if (maxLen > 0) {
+            int i = maxIdx;
+            while (i < maxIdx + maxLen) {
+                System.out.print(arr[i] + ", ");
+                i++;
+            }
+        }
+    }
 
     public static int[] odwrocTablice(int[] arr) {
         int[] res = new int[arr.length];
