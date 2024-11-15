@@ -197,17 +197,26 @@ public class Zestaw3 {
         }
     }
 
-    public static void czyPalindrom(int num) {
-        String string = Integer.toString(num);
-        int strLen = string.length() - 1;
-        for (int i = 0; i <= strLen; i++) {
-            if (string.charAt(i) != string.charAt(strLen - i)) {
-                System.out.println("Numer nie jest palindromem");
-                return;
-            }
+    public static boolean czyPalindrom(int num) {
+        if (num < 0) {
+            return false;
+        }
+        
+        int div = 1;
+        while (num / div >= 10) {
+            div *= 10;
+        }
+        while (num != 0) {
+            int l = num / div;
+            int r = num % 10;
+            if (l != r)
+                return false;
+            num = (num % div) / 10;
+            div /= 100;
         }
 
         System.out.println("Numer jest palindromem");
+        return true;
     }
 
     // zad 17
