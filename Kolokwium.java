@@ -25,8 +25,7 @@ public class Kolokwium {
             if (x1 != 0) {
                 x = x1;
             }
-            x1 = ((x * (n - 1)) + (S / Math.pow(x, n - 1))) /
-                    n;
+            x1 = ((x * (n - 1)) + (S / Math.pow(x, n - 1))) / n;
         } while (!dokladnosc(x, x1, k));
 
 
